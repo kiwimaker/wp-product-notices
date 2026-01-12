@@ -1,0 +1,21 @@
+{
+  "name": "wp-product-notices",
+  "version": "1.0.0",
+  "description": "Plugin de WordPress para mostrar avisos personalizables en páginas de producto de WooCommerce",
+  "author": "Nexir Marketing",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "pot": "wp i18n make-pot . languages/wp-product-notices.pot --domain=wp-product-notices",
+    "zip": "bun run build && zip -r wp-product-notices.zip . -x '*.git*' -x 'node_modules/*' -x 'package.json' -x 'bun.lockb' -x '.DS_Store'",
+    "lint:css": "stylelint '**/*.css' --ignore-path .gitignore",
+    "lint:js": "eslint admin/js/*.js --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

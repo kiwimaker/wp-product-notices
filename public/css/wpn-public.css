@@ -1,0 +1,221 @@
+/**
+ * WP Product Notices - Public Styles
+ *
+ * @package WP_Product_Notices
+ */
+
+/* ==========================================================================
+   Base Notice Styles
+   ========================================================================== */
+
+.wpn-notice {
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.wpn-notice *,
+.wpn-notice *::before,
+.wpn-notice *::after {
+    box-sizing: inherit;
+}
+
+.wpn-notice__text {
+    margin: 0;
+}
+
+.wpn-notice__icon-svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Standard Template
+   ========================================================================== */
+
+.wpn-notice--standard {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    background-color: var(--wpn-bg-color, #e8f5e9);
+    border-left: 4px solid var(--wpn-border-color, #4caf50);
+    border-radius: 4px;
+}
+
+.wpn-notice--standard .wpn-notice__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wpn-notice--standard .wpn-notice__icon-svg {
+    width: 28px;
+    height: 28px;
+    color: var(--wpn-icon-color, #2e7d32);
+}
+
+.wpn-notice--standard .wpn-notice__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.wpn-notice--standard .wpn-notice__text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--wpn-text-color, #1b5e20);
+}
+
+/* ==========================================================================
+   Minimal Template
+   ========================================================================== */
+
+.wpn-notice--minimal {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    margin: 12px 0;
+    background-color: var(--wpn-bg-color, #f5f5f5);
+    border: 1px solid var(--wpn-border-color, #e0e0e0);
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.wpn-notice--minimal .wpn-notice__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wpn-notice--minimal .wpn-notice__icon-svg {
+    width: 18px;
+    height: 18px;
+    color: var(--wpn-icon-color, #616161);
+}
+
+.wpn-notice--minimal .wpn-notice__text {
+    color: var(--wpn-text-color, #424242);
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+   Highlighted Template
+   ========================================================================== */
+
+.wpn-notice--highlighted {
+    display: flex;
+    align-items: stretch;
+    margin: 20px 0;
+    background-color: var(--wpn-bg-color, #fff3e0);
+    border: 2px solid var(--wpn-border-color, #ff9800);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wpn-notice--highlighted .wpn-notice__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    min-width: 64px;
+    background-color: var(--wpn-border-color, #ff9800);
+    padding: 16px 12px;
+}
+
+.wpn-notice--highlighted .wpn-notice__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wpn-notice--highlighted .wpn-notice__icon-svg {
+    width: 28px;
+    height: 28px;
+    color: #ffffff;
+}
+
+.wpn-notice--highlighted .wpn-notice__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+}
+
+.wpn-notice--highlighted .wpn-notice__text {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--wpn-text-color, #e65100);
+}
+
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+@media (max-width: 480px) {
+    .wpn-notice--standard {
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    .wpn-notice--standard .wpn-notice__icon-svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .wpn-notice--standard .wpn-notice__text {
+        font-size: 13px;
+    }
+
+    .wpn-notice--highlighted .wpn-notice__icon-wrapper {
+        width: 50px;
+        min-width: 50px;
+        padding: 12px 10px;
+    }
+
+    .wpn-notice--highlighted .wpn-notice__icon-svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .wpn-notice--highlighted .wpn-notice__content {
+        padding: 14px 16px;
+    }
+
+    .wpn-notice--highlighted .wpn-notice__text {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================================================
+   WooCommerce Integration
+   ========================================================================== */
+
+/* Ensure notices don't break WooCommerce layouts */
+.woocommerce div.product .wpn-notice {
+    clear: both;
+}
+
+/* When inside product summary */
+.woocommerce div.product .summary .wpn-notice {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* When before add to cart */
+.woocommerce div.product form.cart + .wpn-notice {
+    margin-top: 20px;
+}
+
+/* Reset potential theme conflicts */
+.wpn-notice p {
+    margin: 0;
+    padding: 0;
+}
+
+.wpn-notice svg {
+    max-width: none;
+    max-height: none;
+}
