@@ -23,12 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- Guía de integración con Flatsome -->
 <div class="wpn-info-box wpn-info-box--flatsome">
-    <div class="wpn-info-box__header" id="wpn-flatsome-toggle">
+    <div class="wpn-info-box__header">
         <span class="dashicons dashicons-info-outline"></span>
         <strong><?php esc_html_e( '¿Usas Flatsome u otro Page Builder?', 'wp-product-notices' ); ?></strong>
-        <span class="wpn-info-box__toggle dashicons dashicons-arrow-down-alt2"></span>
     </div>
-    <div class="wpn-info-box__content" id="wpn-flatsome-content" style="display: none;">
+    <div class="wpn-info-box__content">
         <p><?php esc_html_e( 'Si los avisos no aparecen con el método PHP (hooks), sigue estos pasos para integrarlos con Flatsome:', 'wp-product-notices' ); ?></p>
         <ol>
             <li><?php esc_html_e( 'Crea un aviso y copia el shortcode que aparece en la sección "Posición"', 'wp-product-notices' ); ?> <code>[wpn_notice id="..."]</code></li>
